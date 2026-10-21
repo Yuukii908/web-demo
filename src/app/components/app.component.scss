@@ -1,0 +1,86 @@
+/* =========================================
+   APP COMPONENT
+   ========================================= */
+
+:host {
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #050505;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main {
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #050505;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   ROUTER
+   ========================================= */
+
+router-outlet {
+  display: none;
+}
+
+
+/* =========================================
+   COMPONENTS
+   ========================================= */
+
+app-navbar {
+  display: block;
+  width: 100%;
+}
+
+app-home {
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+app-footer {
+  display: block;
+  width: 100%;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  :host {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+}

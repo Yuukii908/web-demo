@@ -1,0 +1,20 @@
+<header class="navbar">
+    <a class="logo" href="#home">
+        <img 
+        src="/assets/image/logo2.jpg" alt="Logo">
+    </a>
+
+    <nav [class.active]="menuOpen">
+        <a href="#home" (click)="closeMenu()">Home</a>
+        <a href="#about" (click)="closeMenu()">About</a>
+        <a href="#skills" (click)="closeMenu()">Skills</a>
+        <a href="#projects" (click)="closeMenu()">Project</a>
+        <a href="#contact" class="contact-button" (click)="closeMenu()">
+            ContactMe
+        </a>
+    </nav>
+
+    <button class="menu-button" type="button" (click)="toggleMenu()" aria-label="Toggle navigation">
+         ☰
+    </button>
+</header>

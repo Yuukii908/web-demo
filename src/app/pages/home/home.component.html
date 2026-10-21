@@ -1,0 +1,268 @@
+<!--HERO-->
+
+<section id="home" class="hero">
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+
+        <p class="intro">
+            HELLO I'M
+        </p>
+
+        <h1>
+            Joshua
+            <span>Sandra.</span>
+        </h1>
+
+        <h2>
+            Full Stack Developer
+        </h2>
+
+        <p class="description">
+            I build modern, responsive and interactive web applications
+            using Angular, NestJS, Node.js and modern web technologies.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="primary-button">
+                View My Work
+            </a>
+
+            <a href="#contact" class="secondary-button">
+                Contact Me
+            </a>
+
+        </div>
+
+        <div class="socials">
+
+            <a href="https://github.com/Yuukii908" target="_blank" rel="noopener noreferrer">
+                GitHub ↗
+            </a>
+
+            <a href="https://instagram.com/._wirangga" target="_blank" rel="noopener noreferrer">
+                Instagram ↗
+            </a>
+
+        </div>
+    </div>
+
+    
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+
+  <p class="section-label">ABOUT ME</p>
+
+  <h2>
+    Turning ideas into
+    <span>digital experiences.</span>
+  </h2>
+
+  <div class="about-grid">
+
+    <div>
+      <p>
+        I'm a Full Stack Developer passionate about building
+        clean, modern and functional applications.
+      </p>
+
+      <p>
+        I enjoy working with modern frontend and backend
+        technologies and continuously learning new things.
+      </p>
+    </div>
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>10+</strong>
+        <span>Projects</span>
+      </div>
+
+      <div class="stat">
+        <strong>2+</strong>
+        <span>Years Learning</span>
+      </div>
+
+      <div class="stat">
+        <strong>∞</strong>
+        <span>Ideas</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="section skills-section">
+
+  <p class="section-label">MY SKILLS</p>
+
+  <h2>
+    Technologies I
+    <span>work with.</span>
+  </h2>
+
+  <div class="skills">
+
+    @for (skill of skills; track skill) {
+
+      <div class="skill">
+        {{ skill }}
+      </div>
+
+    }
+
+  </div>
+
+</section>
+
+
+<!-- PROJECT -->
+
+<section id="projects" class="section">
+
+  <p class="section-label">SELECTED WORK</p>
+
+  <h2>
+    Featured
+    <span>Projects.</span>
+  </h2>
+
+  <div class="project-grid">
+
+    @for (project of projects; track project.title) {
+
+      <article class="project-card">
+
+        <div class="project-image">
+
+          <span>
+            {{ project.number }}
+          </span>
+
+        </div>
+
+        <div class="project-content">
+
+          <p class="project-number">
+            PROJECT {{ project.number }}
+          </p>
+
+          <h3>
+            {{ project.title }}
+          </h3>
+
+          <p>
+            {{ project.description }}
+          </p>
+
+          <div class="technologies">
+
+            @for (tech of project.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+
+          </div>
+
+          <a
+            [href]="project.github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Project →
+          </a>
+
+        </div>
+
+      </article>
+
+    }
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section contact-section">
+
+  <p class="section-label">GET IN TOUCH</p>
+
+  <h2>
+    Let's work
+    <span>together.</span>
+  </h2>
+
+  <p class="contact-description">
+    Have a project in mind or just want to say hello?
+    Send me a message.
+  </p>
+
+  <form
+    class="contact-form"
+    (ngSubmit)="sendMessage()"
+  >
+
+    <div class="form-row">
+
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="contact.name"
+        placeholder="Your name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="contact.email"
+        placeholder="Your email"
+        required
+      >
+
+    </div>
+
+    <input
+      type="text"
+      name="subject"
+      [(ngModel)]="contact.subject"
+      placeholder="Subject"
+    >
+
+    <textarea
+      name="message"
+      [(ngModel)]="contact.message"
+      placeholder="Tell me about your project..."
+      rows="7"
+      required
+    ></textarea>
+
+    <button
+      type="submit"
+      [disabled]="loading"
+    >
+      {{ loading ? 'Sending...' : 'Send Message →' }}
+    </button>
+
+    @if (succesMessage) {
+      <p class="success">
+        {{ succesMessage }}
+      </p>
+    }
+
+  </form>
+
+</section>

@@ -1,0 +1,20 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-navbar',
+  imports: [],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
+})
+export class NavbarComponents {
+
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen; 
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+}
